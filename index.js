@@ -25,6 +25,8 @@ function getResults(body){
 		const title = result.find('[data-qa="vacancy-serp__vacancy-title"]').text();
 		const salary = result.find('[data-qa="vacancy-serp__vacancy-compensation"]').text();
 		const link = result.find('a.bloko-link').attr('href');
+		const responsibility = result.find('div[data-qa="vacancy-serp__vacancy_snippet_responsibility"]').text();
+		const requirement = result.find('div[data-qa="vacancy-serp__vacancy_snippet_requirement"]').text();
 		const employerRaw = result.find('a[data-qa="vacancy-serp__vacancy-employer"]');
 		const employer = {
 			name: employerRaw.text(),
@@ -37,6 +39,8 @@ function getResults(body){
 			title,
 			salary,
 			link,
+			responsibility,
+			requirement,
 			employer,
 			address,
 			date
